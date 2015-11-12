@@ -1,21 +1,43 @@
+/*
+edited by: markus
+     date: 2015-11-11
+*/
+
 #include <cmath>
 #include <iostream>
 #include <cstdlib>
 
 using namespace std;
-//--------------------------------------------------
-// plenty of lines here
-//--------------------------------------------------
+
+void rrand(double* x, int N){					//function that writes "random" values in x[i]
+	for(int i=0; i<N; i++){
+		int rand();
+		x[i] = (rand()*1.0)/(RAND_MAX*1.0);
+	}
+}
+
+void meanvar(double* x, int N, double& mean, double& var){	//function that caltulates mean and var
+	mean=0; var=0;
+	for(int i=0; i<N; i++)
+		mean += x[i]/N;
+	for(int i=0; i<N; i++)
+		var += pow(x[i]-mean, 2.0)/N;
+}
 
 int main(){
-   const int N = 100;
-   double p[N];
-   double mean, var;
+	const int N = 100;
+	double p[N];
+	double mean, var;
 
-   // Some lines here....
+	rrand(p, N);
 
-   cout << "Mean = " << mean << endl;
-   cout << "Variance = " << var << endl;
+//	for(int i=0; i<N; i++)
+//	cout << p[i] << endl;
 
-   return 0;
+	meanvar(p, N, mean, var);
+
+	cout << "Mean = " << mean << endl;
+	cout << "Variance = " << var << endl;
+
+	return 0;
 }
