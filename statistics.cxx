@@ -1,6 +1,6 @@
 /*
 edited by: markus
-     date: 2015-11-11
+     date: 2015-11-16
 */
 
 #include <cmath>
@@ -9,14 +9,14 @@ edited by: markus
 
 using namespace std;
 
-void rrand(double* x, int N){					//function that writes "random" values in x[i]
+void rrand(double* x, const int N){					//function that writes "random" values in x[i]
 	for(int i=0; i<N; i++){
 		int rand();
 		x[i] = (rand()*1.0)/(RAND_MAX*1.0);
 	}
 }
 
-void meanvar(double* x, int N, double& mean, double& var){	//function that caltulates mean and var
+void meanvar(double* x, const int N, double& mean, double& var){	//function that caltulates mean and var
 	mean=0; var=0;
 	for(int i=0; i<N; i++)
 		mean += x[i]/N;
