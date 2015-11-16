@@ -16,7 +16,7 @@ void rrand(double* x, const int N){					//function that writes "random" values i
 	}
 }
 
-void meanvar(double* x, const int N, double& mean, double& var){	//function that caltulates mean and var
+void meanvar(double* x, const int N, double& mean, double& var){	//function that calculates mean and var
 	mean=0; var=0;
 	for(int i=0; i<N; i++)
 		mean += x[i]/N;
