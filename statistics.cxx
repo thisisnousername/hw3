@@ -6,6 +6,7 @@ edited by: markus
 #include <cmath>
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -25,6 +26,7 @@ void meanvar(double* x, const int N, double& mean, double& var){	//function that
 }
 
 int main(){
+	srand(time(NULL));
 	const int N = 100;
 	double p[N];
 	double mean, var;
