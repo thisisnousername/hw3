@@ -12,7 +12,6 @@ using namespace std;
 
 void rrand(double* x, const int N){					//function that writes "random" values in x[i]
 	for(int i=0; i<N; i++){
-		int rand();
 		x[i] = (rand()*1.0)/(RAND_MAX*1.0);
 	}
 }
