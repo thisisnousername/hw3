@@ -1,6 +1,6 @@
 /*
 edited by: markus
-     date: 2015-11-16
+     date: 2015-11-23
 */
 
 #include <cmath>
@@ -19,9 +19,11 @@ void rrand(double* x, const int N){					//function that writes "random" values i
 void meanvar(double* x, const int N, double& mean, double& var){	//function that calculates mean and var
 	mean=0; var=0;
 	for(int i=0; i<N; i++)
-		mean += x[i]/N;
+		mean += x[i];
+	mean /= N;
 	for(int i=0; i<N; i++)
-		var += pow(x[i]-mean, 2.0)/N;
+		var += pow(x[i]-mean, 2.0);
+	var /= N;
 }
 
 int main(){
